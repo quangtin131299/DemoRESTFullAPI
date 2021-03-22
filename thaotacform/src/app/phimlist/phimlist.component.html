@@ -1,0 +1,23 @@
+<app-formtest [tenphim]="tenPhim" [maphim]=id></app-formtest>
+<br/>
+<table style="width:500px" mat-table [dataSource]="phims" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="ID">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TenPhim">
+        <th mat-header-cell *matHeaderCellDef> Tên phim </th>
+        <td mat-cell *matCellDef="let element"> {{element.tenPhim}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ThaoTac">
+        <th mat-header-cell *matHeaderCellDef> Thao tác </th>
+        <td mat-cell *matCellDef="let element"><button (click)="onClickDelete(element.id)" mat-raised-button color="primary">Xóa</button> | <button (click)="onClickUpdate(element.id,element.tenPhim)" mat-raised-button color="primary">Sửa</button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

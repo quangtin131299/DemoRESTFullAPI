@@ -1,0 +1,11 @@
+<form [formGroup]="formAdd" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="legacy">
+        <mat-label>Tên Phim</mat-label>
+        <input [value]="tenphim" id="txttenphim" matInput placeholder="Điền tên phim vào đây" formControlName="tenPhim">
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary">Submit</button>
+    <input name="rdoedit" type="radio" value="0"  checked formControlName="rdocheck" /> Thêm
+    <input name="rdoedit" type="radio" value="1" formControlName="rdocheck"  /> Sửa
+</form>
+<br />
